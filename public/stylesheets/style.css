@@ -1,0 +1,32 @@
+body {
+  background-image: url('http://www.charterfitness.com/wp-content/uploads/2013/06/fruits-and-vegetables-rainbow11.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.maincontainer {
+  color: green;
+  text-align: center;
+}
+
+a {
+  white-space: pre-wrap;
+  font-size: 25px;
+  text-decoration: none;
+  width: 600px;
+  border-radius: 10px;
+  background-color: #E6E6E6;
+  /*align: center;*/
+  color: green;
+  margin : 20px;
+  padding: 10px 20px 10px 20px;
+  display: inline-block;
+}
+.home {
+  align: top;
+  width: auto;
+}
