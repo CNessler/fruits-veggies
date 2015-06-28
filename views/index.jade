@@ -2,21 +2,38 @@ extends layout
 
 block content
   div.maincontainer
+    p= JSON.stringify(response)
     h1 What's in season?
-    div.links
     p
-      a(href='/spring') 
-        b Spring 
-          |(March, April, May)
+    form(action='/' method='post')
+      label Find Farmers Market
       p
-      a(href='/summer') 
-        b Summer
-          | (June, July, August)
-      p
-      a(href='/fall') 
-        b Fall
-          | (September, October, November)
-      p
-      a(href='/winter') 
-        b Winter
-          | (December, January, February)
+        input(type='text' name='search')
+        p
+      input(type='submit' value='Find Market' name='button')
+    //- if marketInfo
+    //-   each market in markets
+    //-     p= market
+  div.seasons
+    button(onclick='summer()'  id='summer') Summer 
+      div.season
+    p.text yoyo
+
+  script(src='/javascripts/client.js' type='text/javascript')
+    //- div.links
+    //- p
+    //-   a(href='/spring') 
+    //-     b Spring 
+    //-       |(March, April, May)
+    //-   p
+    //-   a(href='/summer') 
+    //-     b Summer
+    //-       | (June, July, August)
+    //-   p
+    //-   a(href='/fall') 
+    //-     b Fall
+    //-       | (September, October, November)
+    //-   p
+    //-   a(href='/winter') 
+    //-     b Winter
+    //-       | (December, January, February)
