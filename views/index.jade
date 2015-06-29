@@ -1,8 +1,10 @@
 extends layout
 
 block content
+  link(type='style/css' href='/stylesheets/style.css')
   div.maincontainer
-    p= JSON.stringify(response)
+  
+    //- p= JSON.stringify(response)
     h1 What's in season?
     p
     form(action='/' method='post')
@@ -11,14 +13,13 @@ block content
         input(type='text' name='search')
         p
       input(type='submit' value='Find Market' name='button')
-    //- if marketInfo
-    //-   each market in markets
-    //-     p= market
+  
   div.seasons
     button(onclick='summer()'  id='summer') Summer 
       div.season
-    p.text yoyo
-
+    p.text 
+    each mark in marketInfo
+      p= mark.marketdetails
   script(src='/javascripts/client.js' type='text/javascript')
     //- div.links
     //- p

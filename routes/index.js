@@ -20,20 +20,37 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-  var input = req.body.search
-  unirest
+  var input = req.body.search;
+    unirest
     .get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + input)
-    // take the array of ids
+    // .header('Accept', 'application/json')
     // iterate through those ids and make api calls to retrieve individual market info
     // return an array of markets and their info to be displayed in view
-    // .get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + response.body.results[0].id)
     .end(function (response) {
-      var ids = functions.getIds(response.body.results); // returns an array of market ids
-      console.log(ids);
-      var markets = functions.getMarket(ids);
-      console.log(markets); // returns an array of market objects
-    res.render('index', {marketInfo: markets});// pass the array of market objects to your view );
-  })
-  })
+       var ids = functions.getIds(response.body.results); // returns an array of market ids
+      // console.log(ids);
+        var max = ids.length;
+        var info = [];
+        for (var i = 0; i < ids.length; i++) {
+          unirest
+          .get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=' + ids[i])
+
+            //  .header('Accept', 'application/json')
+            .end(function (response) {
+              // console.log(response.body.marketdetails);
+              if(info.length < max){
+                info.push(response.body)
+              }
+
+                console.log("*******************");
+                console.log("*******************");
+                console.log(info);
+            })
+        } // returns an array of market objects
+              res.render('index', {marketInfo: info});
+    })
+  // , {marketInfo: markets});
+  // pass the array of market objects to your view );
+});
 
 module.exports = router;
