@@ -1,5 +1,23 @@
 
-
+//
+// var product = document.getElementsByClassName('products')
+// var products = [];
+// for (var i = 0; i < product.length; i++) {
+//   if (product[i].innerHTML === ""){
+//     products.push('No products listed for this market.')
+//   } else {
+//   products.push(product[i].innerHTML)
+//   }
+// }
+//
+// var address = document.getElementsByClassName('address');
+// var marketAddress = [];
+// for (var i = 0; i < address.length; i++) {
+//   marketAddress.push(address[i].innerHTML);
+// }
+//
+// console.log(products);
+// document.getElementById('yo').style.display='none';
 var product = document.getElementsByClassName('products')
 var products = [];
 for (var i = 0; i < product.length; i++) {
@@ -9,15 +27,13 @@ for (var i = 0; i < product.length; i++) {
   products.push(product[i].innerHTML)
   }
 }
-
-var address = document.getElementsByClassName('address');
-var marketAddress = [];
-for (var i = 0; i < address.length; i++) {
-  marketAddress.push(address[i].innerHTML);
+for (var i = 0; i < products.length; i++) {
+  products[i]
 }
 
-console.log(products);
-// document.getElementById('yo').style.display='none';
+function showDiv() {
+   document.getElementById('toggle').style.display = "block";
+}
 
 function mapping() {
   var link = document.getElementsByClassName('google');
@@ -87,7 +103,8 @@ function mapping() {
      // Allow each marker to have an info window
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
          return function() {
-             infoWindow.setContent(infoWindowContent[i], infoWindowProducts[i]);
+             infoWindow.setContent('<div id="info_window">' + '<b>' + infoWindowContent[i] + '</b>' + '<p>'+ '</div>'
+             +  '<a href="#" onclick="showDiv()">' + 'Products' + '</a>'+ '<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>');
              infoWindow.open(map, marker);
          }
      })(marker, i));

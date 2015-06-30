@@ -43,7 +43,15 @@ body {
   width: 50%;
   margin: 0px auto;
 }
-/*iframe {
-width:600px;
-height:450px;
-}*/
+
+#info_window {
+  background-color: yellow;
+  height: 100%;
+  max-width: 350px;
+}
+
+#toggle {
+  font-size: 18px;
+  align: right;
+  max-width: 350px;
+}
