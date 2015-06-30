@@ -1,3 +1,4 @@
+
 extends layout
 
 block content
@@ -13,13 +14,23 @@ block content
         input(type='text' name='search')
         p
       input(type='submit' value='Find Market' name='button')
-  
+    div.map_wrapper
+      div#map_canvas
+    div#yo  
+      if marketInfo
+        each mark in marketInfo
+          p.address 
+            = mark.marketdetails.Address
+          p.google
+            = mark.marketdetails.GoogleLink
+          p.products
+            = mark.marketdetails.Products
+
   div.seasons
     button(onclick='summer()'  id='summer') Summer 
       div.season
     p.text 
-    each mark in marketInfo
-      p= mark.marketdetails
+    
   script(src='/javascripts/client.js' type='text/javascript')
     //- div.links
     //- p

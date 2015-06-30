@@ -11,6 +11,7 @@ body {
 .maincontainer {
   color: green;
   text-align: center;
+  align-items: center;
   display: block;
 }
 
@@ -32,3 +33,17 @@ body {
   align: top;
   width: auto;
 }
+
+.map_wrapper {
+  height: 400px
+}
+
+#map_canvas {
+  height: 100%;
+  width: 50%;
+  margin: 0px auto;
+}
+/*iframe {
+width:600px;
+height:450px;
+}*/

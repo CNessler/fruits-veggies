@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var unirest = require('unirest');
 var functions = require('../lib/javascript/markets.js')
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // var button = req.body.button
@@ -41,13 +42,13 @@ router.post('/', function (req, res, next) {
               if(info.length < max){
                 info.push(response.body)
               }
-
-                console.log("*******************");
-                console.log("*******************");
-                console.log(info);
+              if (info.length >= max){
+                // console.log(info);
+                res.render('index', {marketInfo: info});
+            }
             })
         } // returns an array of market objects
-              res.render('index', {marketInfo: info});
+
     })
   // , {marketInfo: markets});
   // pass the array of market objects to your view );
