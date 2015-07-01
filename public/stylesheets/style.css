@@ -1,5 +1,5 @@
 body {
-  /*background-image: url('http://www.charterfitness.com/wp-content/uploads/2013/06/fruits-and-vegetables-rainbow11.jpg');*/
+  background-image: url('http://www.hqwalls.com/wp-content/uploads/2011/10/Fresh-Fruit-Wallpapers-1920x1200-2.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   -webkit-background-size: cover;
@@ -8,30 +8,20 @@ body {
   background-size: cover;
 }
 
+h1 {
+  background-color: #D34E24;
+  color: #F4C95D;
+  text-align: left;
+  padding: 10px;
+  padding-left: 65px;
+  border-radius: 5px;
+
+}
 .maincontainer {
-  color: green;
+  color: #D34E24;
   text-align: center;
   align-items: center;
   display: block;
-}
-
-.seasons a{
-  white-space: pre-wrap;
-  font-size: 25px;
-  text-decoration: none;
-  width: 100px;
-  border-radius: 10px;
-  background-color: #E6E6E6;
-  align: left;
-  align: top;
-  color: green;
-  margin : 20px;
-  padding: 10px 20px 10px 20px;
-  display: block;
-}
-.home {
-  align: top;
-  width: auto;
 }
 
 .map_wrapper {
@@ -45,13 +35,18 @@ body {
 }
 
 #info_window {
-  background-color: yellow;
+  background-color: #D34E24;
   height: 100%;
   max-width: 350px;
+  color:#F4C95D;
 }
 
 #toggle {
   font-size: 18px;
   align: right;
   max-width: 350px;
+}
+
+#yo {
+  display: none;
 }

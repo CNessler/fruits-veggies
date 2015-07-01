@@ -103,8 +103,10 @@ function mapping() {
      // Allow each marker to have an info window
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
          return function() {
-             infoWindow.setContent('<div id="info_window">' + '<b>' + infoWindowContent[i] + '</b>' + '<p>'+ '</div>'
-             +  '<a href="#" onclick="showDiv()">' + 'Products' + '</a>'+ '<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>');
+             infoWindow.setContent('<div id="info_window">' + '<b>' + infoWindowContent[i]
+             + '</b>' + '<p>'+ '</div>'
+             +  '<a href="#" onclick="showDiv()">' + 'Products' + '</a>'+
+             '<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>');
              infoWindow.open(map, marker);
          }
      })(marker, i));

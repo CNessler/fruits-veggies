@@ -6,16 +6,18 @@ block content
   div.maincontainer
   
     //- p= JSON.stringify(response)
-    h1 What's in season?
+    h1 Eat Local
     p
     form(action='/' method='post')
       label Find Farmers Market
       p
-        input(type='text' name='search')
+        input(type='text' name='search' placeholder="Enter Zip Code")
         p
       input(type='submit' value='Find Market' name='button')
+      p
     div.map_wrapper
       div#map_canvas
+      p.toggle
     div#yo  
       if marketInfo
         each mark in marketInfo
