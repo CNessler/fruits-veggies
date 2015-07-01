@@ -41,7 +41,8 @@ h1 {
   color:#F4C95D;
 }
 
-#toggle {
+#change {
+  display: none;
   font-size: 18px;
   align: right;
   max-width: 350px;

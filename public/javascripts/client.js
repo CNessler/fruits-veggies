@@ -34,6 +34,9 @@ for (var i = 0; i < products.length; i++) {
 function showDiv() {
    document.getElementById('toggle').style.display = "block";
 }
+function showDiv() {
+   document.getElementById('change').style.display = "block";
+}
 
 function mapping() {
   var link = document.getElementsByClassName('google');
@@ -102,12 +105,17 @@ function mapping() {
 
      // Allow each marker to have an info window
      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+       var change = document.getElementById("change");
          return function() {
              infoWindow.setContent('<div id="info_window">' + '<b>' + infoWindowContent[i]
              + '</b>' + '<p>'+ '</div>'
-             +  '<a href="#" onclick="showDiv()">' + 'Products' + '</a>'+
-             '<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>');
+             +  '<a href="#" onclick="showDiv()">' + 'Products' + '</a>'
+             +'<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>');
+            //  var newDiv = document.createElement('div');
+            //  newDiv.innerHTML= infoWindowProducts[i];
+            //  document.getElementById('toggle').appendChild('newDiv');
              infoWindow.open(map, marker);
+             change.innerHTML = toggle.innerHTML.replace(/;/g, '<p>');
          }
      })(marker, i));
 
