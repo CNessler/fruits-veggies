@@ -3,24 +3,20 @@ extends layout
 
 block content
   link(type='style/css' href='/stylesheets/style.css')
-  div.maincontainer
-  
-    //- p= JSON.stringify(response)
-    h1 Eat Local
-    p
-    form(action='/' method='post')
-      label Find Farmers Market
-      p
-        input(type='text' name='search' placeholder="Enter Zip Code")
-        p
-      input(type='submit' value='Find Market' name='button')
-      p
-    div.map_wrapper
-      div#map_canvas
-    div.information  
+  div.row
+    div.col-4
+      h1 Eat Local
+    div.col-8
+      form(action='/' method='post')
+        label Find Farmers Market
+          input(type='text' name='search' placeholder="Enter Zip Code" autofocus)
+        input(type='submit' value='Find Market' name='button')
+  div.row-2  
+    div.col-7
+      div.map_wrapper
+        div#map_canvas
+    div.col-5    
       p#change
-    
-        
     div#yo  
       if marketInfo
         each mark in marketInfo
@@ -30,11 +26,13 @@ block content
             = mark.marketdetails.GoogleLink
           p.products
             = mark.marketdetails.Products
+          p.schedule 
+            = mark.marketdetails.Schedule
 
-  div.seasons
-    button(onclick='summer()'  id='summer') Summer 
-      div.season
-    p.text 
+  //- div.seasons
+  //-   button(onclick='summer()'  id='summer') Summer 
+  //-     div.season
+  //-   p.text 
     
   script(src='/javascripts/client.js' type='text/javascript')
     //- div.links

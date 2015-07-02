@@ -5,18 +5,6 @@ var functions = require('../lib/javascript/markets.js')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // var button = req.body.button
-  // var input = req.body.search
-  // if (input){
-  // button.addEventListener('click', function () {
-  //   unirest
-  //     .get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + input)
-  //     .end(function (response) {
-  //       console.log(response.body);
-  //       res.render('index', {response: response.body.results})
-  //     })
-  //   })
-  //   }
   res.render('index')
 });
 
@@ -43,7 +31,6 @@ router.post('/', function (req, res, next) {
                 info.push(response.body)
               }
               if (info.length >= max){
-                // console.log(info);
                 res.render('index', {marketInfo: info});
             }
             })
