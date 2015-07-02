@@ -1,5 +1,3 @@
-
-//
 // var product = document.getElementsByClassName('products')
 // var products = [];
 // for (var i = 0; i < product.length; i++) {
@@ -70,7 +68,7 @@ function mapping() {
   var schedule = document.getElementsByClassName('schedule');
   var marketSched = [];
   for (var i =  0; i < schedule.length; i++) {
-     marketSched.push(schedule[i].innerHTML.replace(/));
+     marketSched.push(schedule[i].innerHTML);
   }
 
  var bounds = new google.maps.LatLngBounds();
