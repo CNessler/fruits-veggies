@@ -11,9 +11,9 @@ block content
         label Find Farmers Market
           input(type='text' name='search' placeholder="Enter Zip Code" autofocus)
         input(type='submit' value='Find Market' name='button')
-  //- if errors
-  //-   each error in errors
-  //-     p.err= error
+  if errors
+    each error in errors
+      p.err= error
   div.row-2  
     div.col-7
       div.map_wrapper

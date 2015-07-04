@@ -10,14 +10,14 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function (req, res, next) {
   var input = req.body.search;
-  //   var validation = functions.errorCheck(input)
-  //   if (validation.length > 0) {
-  //     res.render('index', {errors: validation})
-  //   }
+    var validation = functions.errorCheck(input)
+    if (validation.length > 0) {
+      res.render('index', {errors: validation})
+    }
 
     unirest
-    // .get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + input)
-    .get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=46220')
+    .get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + input)
+    // .get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=46220')
     // .header('Accept', 'application/json')
     // iterate through those ids and make api calls to retrieve individual market info
     // return an array of markets and their info to be displayed in view

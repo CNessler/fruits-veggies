@@ -15,10 +15,11 @@ body {
   display: inline-block;
 }
 
-/*.err {
+.err {
   color: black;
-  text-align: center;
-}*/
+  text-align: right;
+  padding-right:15%;
+}
 .col-4 {
   width: 30%;
   height: inherit;
@@ -132,6 +133,9 @@ form label input{
   align: right;
   max-width: 350px;
 }*/
+.gm-style-iw {
+  background-color:#D1603D;
+}
 
 #yo {
   display: none;
