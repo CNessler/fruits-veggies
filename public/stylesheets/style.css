@@ -15,6 +15,10 @@ body {
   display: inline-block;
 }
 
+/*.err {
+  color: black;
+  text-align: center;
+}*/
 .col-4 {
   width: 30%;
   height: inherit;

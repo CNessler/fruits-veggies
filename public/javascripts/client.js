@@ -7,14 +7,20 @@
 //   products.push(product[i].innerHTML)
 //   }
 // }
- // var schedule = document.getElementsByClassName('schedule');
- // var schedule = escape(schedule)
- // console.log(schedule);
- // console.log(marketSched);
- //  var marketSched = [];
- //  for (var i =  0; i < schedule.length; i++) {
- //     marketSched.push(schedule[i].innerHTML);
- //  }
+ var schedule = document.getElementsByClassName('schedule');
+  var marketSched = [];
+ console.log(marketSched);
+  for (var i =  0; i < schedule.length; i++) {
+     marketSched.push(schedule[i].innerHTML);
+  }
+  var final =[];
+  console.log(final);
+  for (var i = 0; i < marketSched.length; i++) {
+    marketSched[i].split(';');
+    for (var j = 0; j < marketSched[i].length; j++) {
+      final.push(marketSched[i][0])
+    }
+  }
 // var address = document.getElementsByClassName('address');
 // var marketAddress = [];
 // for (var i = 0; i < address.length; i++) {
@@ -65,11 +71,11 @@ function mapping() {
     }
   }
 
-  var schedule = document.getElementsByClassName('schedule');
-  var marketSched = [];
-  for (var i =  0; i < schedule.length; i++) {
-     marketSched.push(schedule[i].innerHTML);
-  }
+  // var schedule = document.getElementsByClassName('schedule');
+  // var marketSched = [];
+  // for (var i =  0; i < schedule.length; i++) {
+  //    schedule[i].split(';');
+  // }
 
  var bounds = new google.maps.LatLngBounds();
  var mapOptions = {
