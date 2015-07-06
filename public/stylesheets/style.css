@@ -8,6 +8,53 @@ body {
   background-size: cover;
 }
 
+#seasonal {
+  display: none;
+}
+
+.row-3 {
+  width: 80%;
+  /*text-align: center;*/
+}
+button {
+  margin-top: 430px;
+  background-color: #D1603D;
+  border-radius: 5px;
+  opacity: 0.9 ;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 35%;
+  font-size: 22px;
+  font-family: Zapfino;
+  color: #4F3824;
+}
+.col-12 {
+  padding-left: 60px;
+  /*float: left;*/
+  /*display: inline-flex;*/
+}
+table {
+  width: 100%;
+  background-color: #D1603D;
+  border-radius: 5px;
+  opacity: 0.9 ;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+th {
+  font-size: 26px;
+    font-family: Zapfino;
+      color: #4F3824;
+}
+
+td {
+  padding: 3px;
+  padding-left: 9%;
+  color: #DDB967;
+  font-size: 20px;
+
+}
 .row {
   width: 100%;
   /*background-color: #D1603D;*/

@@ -1,3 +1,17 @@
+// var button = document.getElementById('button');
+// button.addEventListener('click', function () {
+//   // alert('hi')
+//
+// })
+  //   function showDiv() {
+  //    document.getElementById('seasonal').style.display = "block";
+  // }
+  function setVisibility() {
+
+  document.getElementById('seasonal').style.display = 'inline';
+
+  }
+
 // var product = document.getElementsByClassName('products')
 // var products = [];
 // for (var i = 0; i < product.length; i++) {
