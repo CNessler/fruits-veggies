@@ -17,16 +17,18 @@ body {
   /*text-align: center;*/
 }
 button {
-  margin-top: 430px;
+  /*margin-top: 430px;*/
   background-color: #D1603D;
   border-radius: 5px;
   opacity: 0.9 ;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  text-align: center;
+  /*padding-top: 15px;
+  padding-bottom: 15px;*/
   width: 35%;
   font-size: 22px;
   font-family: Zapfino;
-  color: #4F3824;
+  color:#221D23;
+  /*padding-right: 115px;*/
 }
 .col-12 {
   padding-left: 60px;
@@ -167,12 +169,15 @@ form label input{
   /*margin: 0px auto;*/
 }
 
-/*#info_window {
-  background-color: #D34E24;
+#info_window {
+  background-color: #D1603D;
   height: 100%;
   max-width: 350px;
-  color:#F4C95D;
-}*/
+  color:#F3C98B;
+  font-size: 18px;
+  text-align: center;
+  font-family: cursive;
+}
 
 /*#change {
   display: none;
@@ -182,6 +187,7 @@ form label input{
 }*/
 .gm-style-iw {
   background-color:#D1603D;
+  text-align: center;
 }
 
 #yo {

@@ -132,7 +132,7 @@ function mapping() {
              + '</b>' + '<p>'+ '</div>'
              +  '<a href="#" onclick="showDiv()">'+'</a>'
              +'<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>'
-             + '<div>' + infoWindowSchedule[i] + '</div>');
+             + '<p>' + '<div>' + infoWindowSchedule[i] + '</div>');
             //  var newDiv = document.createElement('div');
             //  newDiv.innerHTML= infoWindowProducts[i];
             //  document.getElementById('toggle').appendChild('newDiv');

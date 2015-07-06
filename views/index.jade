@@ -18,12 +18,12 @@ block content
     div.col-7
       div.map_wrapper
         div#map_canvas
-    div.col-12
-      button(onclick='setVisibility();')#button What's in season?
     div.col-5   
       p#change
+    div.col-12
+        button(onclick='setVisibility();')#button What's in season?
   div.row-3
-      div#seasonal
+      div#seasonal(name='show')
         table
           tr
             th Fall
