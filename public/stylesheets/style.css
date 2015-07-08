@@ -32,6 +32,7 @@ a {
 }
 .col-12 {
   padding-left: 60px;
+  display: block;
   /*float: left;*/
   /*display: inline-flex;*/
 }
@@ -171,7 +172,6 @@ form label input{
 
 #info_window {
   background-color: #D1603D;
-  height: 100%;
   max-width: 350px;
   color:#F3C98B;
   font-size: 18px;

@@ -149,8 +149,7 @@ function mapping() {
        var change = document.getElementById("change");
          return function() {
              infoWindow.setContent('<div id="info_window">' + '<b>' + infoWindowContent[i]
-             + '</b>' + '<p>'+ '</div>'
-             +  '<a href="#" onclick="showDiv()">'+'</a>'
+             + '</b>' 
              +'<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>'
              + '<p>' + '<div>' + infoWindowSchedule[i] + '</div>');
             //  var newDiv = document.createElement('div');
