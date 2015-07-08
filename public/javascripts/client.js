@@ -21,20 +21,26 @@
 //   products.push(product[i].innerHTML)
 //   }
 // }
- var schedule = document.getElementsByClassName('schedule');
+var schedule = document.getElementsByClassName('schedule');
   var marketSched = [];
- console.log(marketSched);
+ // console.log(marketSched);
   for (var i =  0; i < schedule.length; i++) {
      marketSched.push(schedule[i].innerHTML);
   }
-  var final =[];
-  console.log(final);
+
+    var final =[];
+  // console.log(final);
   for (var i = 0; i < marketSched.length; i++) {
-    marketSched[i].split(';');
-    for (var j = 0; j < marketSched[i].length; j++) {
-      final.push(marketSched[i][0])
-    }
+    final.push(marketSched[i].split(';'));
   }
+
+   var complete = [];
+  for(var i=0; i<final.length; i++){
+      for(var j=0; j<1; j++){
+          complete.push(final[i][0])
+      }
+  }
+
 // var address = document.getElementsByClassName('address');
 // var marketAddress = [];
 // for (var i = 0; i < address.length; i++) {
@@ -70,7 +76,7 @@ function mapping() {
 
   var address = document.getElementsByClassName('address');
   var marketAddress = [];
-  console.log(marketAddress);
+  // console.log(marketAddress);
   for (var i = 0; i < address.length; i++) {
     marketAddress.push(address[i].innerHTML);
   }
@@ -85,11 +91,25 @@ function mapping() {
     }
   }
 
-  // var schedule = document.getElementsByClassName('schedule');
-  // var marketSched = [];
-  // for (var i =  0; i < schedule.length; i++) {
-  //    schedule[i].split(';');
-  // }
+  var schedule = document.getElementsByClassName('schedule');
+    var marketSched = [];
+   // console.log(marketSched);
+    for (var i =  0; i < schedule.length; i++) {
+       marketSched.push(schedule[i].innerHTML);
+    }
+
+      var final =[];
+    // console.log(final);
+    for (var i = 0; i < marketSched.length; i++) {
+      final.push(marketSched[i].split(';'));
+    }
+
+     var completeSchedule = [];
+    for(var i=0; i<final.length; i++){
+        for(var j=0; j<1; j++){
+            completeSchedule.push(final[i][0])
+        }
+    }
 
  var bounds = new google.maps.LatLngBounds();
  var mapOptions = {
@@ -104,7 +124,7 @@ function mapping() {
  var markers = uncoded;
  var marketName = title;
  var marketProducts = products;
- var marketSchedule = marketSched;
+ var marketSchedule = completeSchedule;
 
  // Info Window Content
 
