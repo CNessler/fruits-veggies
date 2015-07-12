@@ -5,12 +5,14 @@
 // })
   //   function showDiv() {
   //    document.getElementById('seasonal').style.display = "block";
+
   // }
   function setVisibility() {
 
   document.getElementById('seasonal').style.display = 'inline';
 
   }
+
 
 // var product = document.getElementsByClassName('products')
 // var products = [];
@@ -149,7 +151,7 @@ function mapping() {
        var change = document.getElementById("change");
          return function() {
              infoWindow.setContent('<div id="info_window">' + '<b>' + infoWindowContent[i]
-             + '</b>' 
+             + '</b>'
              +'<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>'
              + '<p>' + '<div>' + infoWindowSchedule[i] + '</div>');
             //  var newDiv = document.createElement('div');
