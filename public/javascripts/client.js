@@ -1,59 +1,27 @@
-// var button = document.getElementById('button');
-// button.addEventListener('click', function () {
-//   // alert('hi')
-//
-// })
-  //   function showDiv() {
-  //    document.getElementById('seasonal').style.display = "block";
-
-  // }
-  function setVisibility() {
-
+function setVisibility() {
   document.getElementById('seasonal').style.display = 'inline';
+}
 
-  }
-
-
-// var product = document.getElementsByClassName('products')
-// var products = [];
-// for (var i = 0; i < product.length; i++) {
-//   if (product[i].innerHTML === ""){
-//     products.push('No products listed for this market.')
-//   } else {
-//   products.push(product[i].innerHTML)
+// var schedule = document.getElementsByClassName('schedule');
+//   var marketSched = [];
+//   for (var i =  0; i < schedule.length; i++) {
+//      marketSched.push(schedule[i].innerHTML);
 //   }
-// }
-var schedule = document.getElementsByClassName('schedule');
-  var marketSched = [];
- // console.log(marketSched);
-  for (var i =  0; i < schedule.length; i++) {
-     marketSched.push(schedule[i].innerHTML);
-  }
+//     var final =[];
+//   for (var i = 0; i < marketSched.length; i++) {
+//     final.push(marketSched[i].split(';'));
+//   }
+//    var complete = [];
+//   for(var i=0; i<final.length; i++){
+//       for(var j=0; j<1; j++){
+//           complete.push(final[i][0])
+//       }
+//   }
 
-    var final =[];
-  // console.log(final);
-  for (var i = 0; i < marketSched.length; i++) {
-    final.push(marketSched[i].split(';'));
-  }
-
-   var complete = [];
-  for(var i=0; i<final.length; i++){
-      for(var j=0; j<1; j++){
-          complete.push(final[i][0])
-      }
-  }
-
-// var address = document.getElementsByClassName('address');
-// var marketAddress = [];
-// for (var i = 0; i < address.length; i++) {
-//   marketAddress.push(address[i].innerHTML);
-// }
-//
-// console.log(products);
-// document.getElementById('yo').style.display='none';
 function showDiv() {
    document.getElementById('toggle').style.display = "block";
 }
+
 function showDiv() {
    document.getElementById('change').style.display = "block";
 }
@@ -78,7 +46,6 @@ function mapping() {
 
   var address = document.getElementsByClassName('address');
   var marketAddress = [];
-  // console.log(marketAddress);
   for (var i = 0; i < address.length; i++) {
     marketAddress.push(address[i].innerHTML);
   }
@@ -95,13 +62,11 @@ function mapping() {
 
   var schedule = document.getElementsByClassName('schedule');
     var marketSched = [];
-   // console.log(marketSched);
     for (var i =  0; i < schedule.length; i++) {
        marketSched.push(schedule[i].innerHTML);
     }
 
       var final =[];
-    // console.log(final);
     for (var i = 0; i < marketSched.length; i++) {
       final.push(marketSched[i].split(';'));
     }
@@ -128,7 +93,7 @@ function mapping() {
  var marketProducts = products;
  var marketSchedule = completeSchedule;
 
- // Info Window Content
+
 
 
  // Display multiple markers on a map
@@ -136,7 +101,7 @@ function mapping() {
  var infoWindowContent = marketAddress;
  var infoWindowProducts = marketProducts;
  var infoWindowSchedule = marketSchedule;
- // Loop through our array of markers & place each one on the map
+ // Loop through array of markers & place each one on the map
  for( i = 0; i < markers.length; i++ ) {
      var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
      bounds.extend(position);
@@ -154,14 +119,10 @@ function mapping() {
              + '</b>'
              +'<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>'
              + '<p>' + '<div>' + infoWindowSchedule[i] + '</div>');
-            //  var newDiv = document.createElement('div');
-            //  newDiv.innerHTML= infoWindowProducts[i];
-            //  document.getElementById('toggle').appendChild('newDiv');
              infoWindow.open(map, marker);
              change.innerHTML = toggle.innerHTML.replace(/;/g, '<p>');
          }
      })(marker, i));
-
      // Automatically center the map fitting all markers on the screen
      map.fitBounds(bounds);
  }
@@ -175,14 +136,3 @@ function mapping() {
  }
 
  window.onload = loadScript;
-  // function list() {
-  //   var summer = ['tomato', 'potato', 'lime', 'cilantro'];
-  //   // var list = getElementsByTagName('li')[0];
-  //   for (var i = 0; i < summer.length; i++) {
-  //     var now = document.createElemet('li');
-  //     var node = document.createTextNode(summer[i]);
-  //     now.appendChild('node').innerHtml = summer[i];
-  //     var para = document.getElementsByClassName('text')[0];
-  //     para.appendChild(now);
-  //   }
-  // }
