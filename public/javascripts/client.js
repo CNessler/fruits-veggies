@@ -2,22 +2,6 @@ function setVisibility() {
   document.getElementById('seasonal').style.display = 'inline';
 }
 
-// var schedule = document.getElementsByClassName('schedule');
-//   var marketSched = [];
-//   for (var i =  0; i < schedule.length; i++) {
-//      marketSched.push(schedule[i].innerHTML);
-//   }
-//     var final =[];
-//   for (var i = 0; i < marketSched.length; i++) {
-//     final.push(marketSched[i].split(';'));
-//   }
-//    var complete = [];
-//   for(var i=0; i<final.length; i++){
-//       for(var j=0; j<1; j++){
-//           complete.push(final[i][0])
-//       }
-//   }
-
 function showDiv() {
    document.getElementById('toggle').style.display = "block";
 }
@@ -61,78 +45,70 @@ function mapping() {
   }
 
   var schedule = document.getElementsByClassName('schedule');
-    var marketSched = [];
-    for (var i =  0; i < schedule.length; i++) {
-       marketSched.push(schedule[i].innerHTML);
-    }
+  var marketSched = [];
+  for (var i =  0; i < schedule.length; i++) {
+     marketSched.push(schedule[i].innerHTML);
+  }
 
-      var final =[];
-    for (var i = 0; i < marketSched.length; i++) {
-      final.push(marketSched[i].split(';'));
-    }
+  var final =[];
+  for (var i = 0; i < marketSched.length; i++) {
+    final.push(marketSched[i].split(';'));
+  }
 
-     var completeSchedule = [];
-    for(var i=0; i<final.length; i++){
-        for(var j=0; j<1; j++){
-            completeSchedule.push(final[i][0])
-        }
-    }
+  var completeSchedule = [];
+  for(var i=0; i<final.length; i++){
+      for(var j=0; j<1; j++){
+          completeSchedule.push(final[i][0])
+      }
+  }
 
  var bounds = new google.maps.LatLngBounds();
  var mapOptions = {
      mapTypeId: 'roadmap'
  };
 
- // Display a map on the page
  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
-
- // Multiple Markers
  var markers = uncoded;
  var marketName = title;
  var marketProducts = products;
  var marketSchedule = completeSchedule;
 
-
-
-
- // Display multiple markers on a map
  var infoWindow = new google.maps.InfoWindow(), marker, i;
  var infoWindowContent = marketAddress;
  var infoWindowProducts = marketProducts;
  var infoWindowSchedule = marketSchedule;
- // Loop through array of markers & place each one on the map
- for( i = 0; i < markers.length; i++ ) {
-     var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-     bounds.extend(position);
-     marker = new google.maps.Marker({
-         position: position,
-         map: map,
-         title: marketName[i]
-     });
 
-     // Allow each marker to have an info window
-     google.maps.event.addListener(marker, 'click', (function(marker, i) {
-       var change = document.getElementById("change");
-         return function() {
-             infoWindow.setContent('<div id="info_window">' + '<b>' + infoWindowContent[i]
-             + '</b>'
-             +'<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>'
-             + '<p>' + '<div>' + infoWindowSchedule[i] + '</div>');
-             infoWindow.open(map, marker);
-             change.innerHTML = toggle.innerHTML.replace(/;/g, '<p>');
-         }
-     })(marker, i));
-     // Automatically center the map fitting all markers on the screen
-     map.fitBounds(bounds);
+ for( i = 0; i < markers.length; i++ ) {
+   var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+   bounds.extend(position);
+   marker = new google.maps.Marker({
+       position: position,
+       map: map,
+       title: marketName[i]
+   });
+
+   google.maps.event.addListener(marker, 'click', (function(marker, i) {
+     var change = document.getElementById("change");
+       return function() {
+           infoWindow.setContent('<div id="info_window">' + '<b>' + infoWindowContent[i]
+           + '</b>'
+           +'<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>'
+           + '<p>' + '<div>' + infoWindowSchedule[i] + '</div>');
+           infoWindow.open(map, marker);
+           change.innerHTML = toggle.innerHTML.replace(/;/g, '<p>');
+       }
+   })(marker, i));
+   map.fitBounds(bounds);
  }
 
 }
- function loadScript() {
-   var script = document.createElement('script');
-   script.type = 'text/javascript';
-   script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&callback=mapping';
-   document.body.appendChild(script);
- }
 
- window.onload = loadScript;
+function loadScript() {
+ var script = document.createElement('script');
+ script.type = 'text/javascript';
+ script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&callback=mapping';
+ document.body.appendChild(script);
+}
+
+window.onload = loadScript;
