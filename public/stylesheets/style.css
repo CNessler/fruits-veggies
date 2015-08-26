@@ -8,32 +8,57 @@ body {
   background-size: cover;
 }
 
+.center{
+  text-align: center;
+  color: #141301;
+  font-family: 'Dancing Script', cursive;
+  font-size: 38px;
+  font-weight: bolder;
+}
+#change {
+  background: rgba(14, 12, 02, 0.8);
+  color: #FFFF99;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 3px;
+}
 #seasonal {
   display: none;
 }
 
-.container .row .col-lg-4 h1 {
-  font-size: 110px;
+.row .col-md-6 h1 {
+  font-size: 130px;
   padding: 20px;
+  color: #141301;
+  /*color: #411F20;*/
   font-family: 'Dancing Script', cursive;
+  position: fixed;
+  z-index: 1;
 }
+
 .container .form-inline {
   text-align: center;
   margin: 0 auto;
   border-radius: 3px;
-  margin-top: 80px;
+  margin-top: 350px;
   width: 60%;
-  background-color: red;
-  background: rgba(255,255,255,0.5);
+  padding: 10px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
+  /*background: rgba(65, 31, 32, 0.8);*/
+  background: rgba(14, 12, 02, 0.8);
 }
 
 .container .form-inline label{
   font-size: 22px;
   vertical-align: middle;
+  color: #FFFF99;
 }
 .container .form-inline input{
   border-radius: 3px;
-  font-size: 13px;
+  font-size: 18px;
 }
 
 .container .form-inline .form-group input {
@@ -41,32 +66,58 @@ body {
 }
 
 .container .form-inline .form-group .button {
-  background-color: #666;
-  color: white;
+  background-color: #FFFF99;
+  color: #141301;
+  font-weight: bolder;
+  font-size: 18px;
 }
 
 .map_wrapper {
   height: 80vh;
 }
+/*#two {
+  padding-left: 30px;
+  padding-right: 30px;
+}*/
 
-#map_canvas {
+#map_canvas, .center {
   height: 90%;
-  margin-top: 25px;
+  margin-top: 55px;
+  padding-left: 25px;
 }
 
 #info_window {
-  background-color: #D1603D;
+  background-color: #FFFF99;
+  /*color: #FFFF99;*/
+  color: #141301;
   max-width: 350px;
-  color:#666;
   font-size: 15px;
   text-align: center;
 }
 
 .gm-style-iw {
-  background-color:#D1603D;
+  background-color:#FFFF99;
   text-align: center;
 }
 
 #yo {
   display: none;
+}
+
+.slide.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+.slide.ng-enter-active {
+  opacity: 1;
+}
+
+.slide.ng-leave {
+  transition: 0.75s;
+  opacity: 1;
+}
+
+.slide.ng-leave-active {
+  opacity: 0;
 }

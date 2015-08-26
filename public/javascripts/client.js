@@ -1,10 +1,8 @@
-function setVisibility() {
-  document.getElementById('seasonal').style.display = 'inline';
-}
+angular.module("markets", ['ngAnimate']);
 
-function showDiv() {
-   document.getElementById('toggle').style.display = "block";
-}
+// function setVisibility() {
+//   document.getElementById('seasonal').style.display = 'inline';
+// }
 
 function showDiv() {
    document.getElementById('change').style.display = "block";
@@ -96,7 +94,7 @@ function mapping() {
            +'<div id="toggle" style="display:none">' + infoWindowProducts[i] + '</div>'
            + '<p>' + '<div>' + infoWindowSchedule[i] + '</div>');
            infoWindow.open(map, marker);
-           change.innerHTML = toggle.innerHTML.replace(/;/g, '<p>');
+           change.innerHTML = toggle.innerHTML.replace(/[;<]/g, '<p>');
        }
    })(marker, i));
    map.fitBounds(bounds);
