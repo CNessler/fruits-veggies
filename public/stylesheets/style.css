@@ -35,7 +35,7 @@ body {
   /*color: #411F20;*/
   font-family: 'Dancing Script', cursive;
   position: fixed;
-  z-index: 1;
+  z-index: -1;
 }
 
 .container .form-inline {
@@ -83,7 +83,6 @@ body {
 
 #info_window {
   background-color: #FFFF99;
-  /*color: #FFFF99;*/
   color: #141301;
   max-width: 350px;
   font-size: 15px;

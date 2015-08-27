@@ -1,4 +1,3 @@
-angular.module("markets", ['ngAnimate']);
 
 // function setVisibility() {
 //   document.getElementById('seasonal').style.display = 'inline';
